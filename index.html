@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1000idea — Дизайн и Реклама</title>
+
+    <!-- SEO -->
+    <meta name="description" content="1000idea — студия дизайна. Печать, наружная реклама, брендинг, логотипы, баннеры, визитки. Быстро, профессионально, недорого." />
+    <meta name="keywords" content="дизайн, реклама, наружная реклама, печать, баннеры, лого, Казахстан, 1000idea" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('assets/bg.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Затемняющий слой */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            z-index: 1;
+        }
+
+        /* Лого */
+        .logo {
+            position: relative;
+            width: 300px;
+            animation: fadeIn 1.8s ease forwards;
+            opacity: 0;
+            z-index: 2;
+        }
+
+        /* Кнопки */
+        .btns {
+            position: relative;
+            margin-top: 35px;
+            z-index: 2;
+            animation: slideUp 1.8s ease forwards;
+            opacity: 0;
+        }
+
+        .btns a {
+            display: block;
+            margin: 10px auto;
+            padding: 14px 25px;
+            width: 230px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .btns a:hover {
+            transform: scale(1.04);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Мобильная адаптация */
+        @media (max-width: 480px) {
+            .logo {
+                width: 220px;
+            }
+
+            .btns a {
+                width: 200px;
+                font-size: 17px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- dark overlay -->
+    <div class="overlay"></div>
+
+    <!-- ЛОГО GIF -->
+    <div class="logo-container">
+    <img src="assets/logo.gif" alt="1000idea Logo">
+</div>
+
+    <!-- КНОПКИ -->
+    <div class="btns">
+        <a href="https://wa.me/77018004171" target="_blank">WhatsApp</a>
+        <a href="https://instagram.com/sd_idea" target="_blank">Instagram</a>
+        <a href="mailto:1000idea@inbox.ru" target="_blank">Email</a>
+    </div>
+
+</body>
+</html>
