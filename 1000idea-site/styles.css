@@ -1,0 +1,104 @@
+/* Фон */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url("assets/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+/* Центровка */
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+
+/* Лого */
+.logo {
+    width: 300px;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Кнопки */
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* WhatsApp */
+.whatsapp {
+    background: #25d366;
+    color: white;
+}
+
+.whatsapp:hover {
+    background: #1da851;
+}
+
+/* Instagram */
+.instagram {
+    background: #e1306c;
+    color: white;
+}
+
+.instagram:hover {
+    background: #c72a61;
+}
+
+/* Email */
+.email {
+    background: #555;
+    color: white;
+}
+
+.email:hover {
+    background: #333;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Контейнер логотипа */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* Логотип */
+.logo-container img {
+    width: 220px;
+    animation: slideLogo 8s ease-in-out infinite;
+}
+
+/* Анимация */
+@keyframes slideLogo {
+    0%   { transform: translateX(-200%); }
+    25%  { transform: translateX(0); }
+    40%  { transform: translateX(0); }
+    75%  { transform: translateX(200%); }
+    100% { transform: translateX(-200%); }
+}
