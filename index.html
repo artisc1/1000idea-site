@@ -104,7 +104,37 @@
         <a href="https://www.instagram.com/sd_idea" target="_blank">Instagram</a>
         <a href="mailto:1000idea@inbox.ru" target="_blank">Email</a>
     </div>
+<!-- Музыка на фоне -->
+<audio id="bgMusic" autoplay loop muted>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+  const audio = document.getElementById("bgMusic");
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      audio.muted = false;     // снимаем mute
+      audio.volume = 0.10;     // делаем громкость 10%
+    }, 500);
+  });
+</script>
+
+<audio id="bgMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById("bgMusic");
+
+// Включаем музыку при первом клике
+document.addEventListener("click", () => {
+    audio.volume = 0.08; // 8% громкости
+    audio.play().catch(e => console.log("Autoplay blocked:", e));
+}, { once: true });
+</script>
+    
 </body>
 </html>
+
 
