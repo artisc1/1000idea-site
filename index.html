@@ -25,13 +25,58 @@
             color: white;
         }
 
-           /* Лого */
-        .logo {
+        /* Затемняющий слой */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(2px);
+            z-index: 1;
+        }
+
+        /* Кнопка звука */
+        .top-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+        }
+
+        /* Кнопка звука */
+        .sound-toggle {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #ff6b6b);
+            background-size: 300% 300%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s;
+            font-size: 20px;
+            animation: chameleon 6s ease infinite;
+        }
+
+        .sound-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Лого */
+        .logo-container {
             position: relative;
-            width: 300px;
+            z-index: 2;
             animation: fadeIn 1.8s ease forwards;
             opacity: 0;
-            z-index: 2;
+        }
+
+        .logo-container img {
+            width: 300px;
         }
 
         /* Кнопки */
@@ -41,26 +86,61 @@
             z-index: 2;
             animation: slideUp 1.8s ease forwards;
             opacity: 0;
+            display: flex;
+            gap: 20px;
         }
 
         .btns a {
-            display: block;
-            margin: 10px auto;
-            padding: 14px 25px;
-            width: 230px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 30px;
+            min-width: 160px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 15px;
             text-decoration: none;
             color: white;
             font-size: 18px;
-            backdrop-filter: blur(5px);
-            transition: 0.3s;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btns a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btns a:hover::before {
+            left: 100%;
         }
 
         .btns a:hover {
-            transform: scale(1.04);
-            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .btns a.whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        }
+
+        .btns a.instagram {
+            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .btns a.email {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
         }
 
         /* Анимации */
@@ -74,73 +154,88 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Анимация переливания цветов для кнопки звука */
+        @keyframes chameleon {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         /* Мобильная адаптация */
         @media (max-width: 480px) {
-            .logo {
+            .top-bar {
+                top: 15px;
+                right: 15px;
+            }
+
+            .sound-toggle {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .logo-container img {
                 width: 220px;
+            }
+
+            .btns {
+                flex-direction: column;
+                gap: 12px;
             }
 
             .btns a {
                 width: 200px;
                 font-size: 17px;
                 padding: 12px 20px;
+                min-width: auto;
             }
         }
     </style>
-    <style>
-.sound-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 32px;
-    padding: 10px 15px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    cursor: pointer;
-    user-select: none;
-    z-index: 9999;
-    animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-    0% { box-shadow: 0 0 10px rgba(255,255,255,0.2); }
-    50% { box-shadow: 0 0 20px rgba(255,255,255,0.8); }
-    100% { box-shadow: 0 0 10px rgba(255,255,255,0.2); }
-}
-</style>
-
 </head>
 <body>
-    <!-- Кнопка звука -->
-<div id="soundBtn" class="sound-btn">
-    🔊
-</div>
-
-<!-- Музыка -->
-<audio id="bgMusic" src="audio/music.mp3" loop></audio>
-
 
     <!-- dark overlay -->
     <div class="overlay"></div>
 
+    <!-- Кнопка звука -->
+    <div class="top-bar">
+        <div class="sound-toggle" id="soundBtn">🔊</div>
+    </div>
+
     <!-- ЛОГО GIF -->
     <div class="logo-container">
-    <img src="assets/logo.gif" alt="1000idea Logo">
-</div>
+        <img src="assets/logo.gif" alt="1000idea Logo">
+    </div>
 
     <!-- КНОПКИ -->
     <div class="btns">
-        <a href="https://wa.me/77018004171" target="_blank">WhatsApp</a>
-        <a href="https://www.instagram.com/sd_idea" target="_blank">Instagram</a>
-        <a href="mailto:1000idea@inbox.ru" target="_blank">Email</a>
+        <a href="https://wa.me/77018004171" target="_blank" class="whatsapp">WhatsApp</a>
+        <a href="https://instagram.com/sd_idea" target="_blank" class="instagram">Instagram</a>
+        <a href="mailto:1000idea@inbox.ru" target="_blank" class="email">Email</a>
     </div>
 
-    
+    <!-- Фоновая музыка -->
+    <audio id="bgMusic" loop>
+        <source src="audio/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const soundBtn = document.getElementById('soundBtn');
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+
+        soundBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                soundBtn.textContent = '🔇';
+                isPlaying = false;
+            } else {
+                bgMusic.play();
+                soundBtn.textContent = '🔊';
+                isPlaying = true;
+            }
+        });
+    </script>
+
 </body>
 </html>
-
-
-
-
-
