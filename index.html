@@ -176,12 +176,32 @@
                 min-width: auto;
             }
         }
-    </style>
+    .top-block-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #8fd3fe 0%, #4fa3ff 100%);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.top-block-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+</style>
 </head>
 <body>
-    <!-- Наш блок наверху -->
+<!-- Наш блок наверху -->
 <div class="flex justify-between items-center p-4">
-<a href="#reviews" class="top-block-btn">Наш блок</a>
+  <a href="#reviews" class="top-block-btn">Наш блок</a>
 </div>
 
     <div class="overlay"></div>
@@ -190,13 +210,14 @@
         <div class="sound-toggle" id="soundBtn">🔊</div>
     </div>
 
-    <div class="logo-container">
+    <div class="logo-container" style="margin-top: -10cm; margin-left: 20cm;">
         <img src="assets/logo.gif" alt="1000idea Logo">
     </div>
 
     <!-- КНОПКИ + Добавлена Telegram -->
     <div class="btns">
-        <a href="https://t.me/idea1001bot" target="_blank" class="telegram">Telegram бот</a>
+        
+<a href="https://t.me/idea1001bot" target="_blank" class="telegram">Telegram бот</a>
         <a href="https://wa.me/77018004171" target="_blank" class="whatsapp">WhatsApp</a>
         <a href="https://instagram.com/sd_idea" target="_blank" class="instagram">Instagram</a>
         <a href="mailto:1000idea@inbox.ru" target="_blank" class="email">Email</a>
@@ -226,4 +247,3 @@
 
 </body>
 </html>
-
