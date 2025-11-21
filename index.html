@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1000idea — Дизайн и Реклама</title>
 
-    <!-- SEO -->
+    <!-- SEO улучшено -->
     <meta name="description" content="1000idea — студия дизайна. Печать, наружная реклама, брендинг, логотипы, баннеры, визитки. Быстро, профессионально, недорого." />
-    <meta name="keywords" content="дизайн, реклама, наружная реклама, печать, баннеры, лого, Казахстан, 1000idea" />
+    <link rel="canonical" href="https://1000idea.kz/">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="1000idea — Дизайн и Реклама в Талдыкоргане">
+    <meta property="og:description" content="Печать баннеров, визиток, логотипов, наклеек. Наружная реклама в Талдыкоргане.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://1000idea.kz/">
+    <meta property="og:image" content="assets/logo.gif">
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
-            background: url('assets/bg.jpg') center/cover no-repeat;
+            background: url('assets/bg.jpg') center/cover no-repeat fixed;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
             font-family: Arial, sans-serif;
-            overflow: hidden;
             color: white;
         }
 
@@ -55,6 +60,7 @@
 
         .logo-container {
             position: relative;
+            margin-top: 40px;
             z-index: 2;
             animation: fadeIn 1.8s ease forwards;
             opacity: 0;
@@ -95,127 +101,40 @@
             overflow: hidden;
         }
 
-        .btns a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: 0.5s;
-        }
-
-        .btns a:hover::before {
-            left: 100%;
-        }
-
         .btns a:hover {
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
         }
 
-        .btns a.whatsapp {
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-        }
+        .btns a.whatsapp { background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); }
+        .btns a.instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btns a.email { background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%); }
+        .btns a.telegram { background: linear-gradient(135deg, #8fd3fe 0%, #4fa3ff 100%); }
 
-        .btns a.instagram {
-            background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-
-        .btns a.email {
-            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-        }
-
-        /* Новая кнопка Telegram */
-        .btns a.telegram {
-            background: linear-gradient(135deg, #8fd3fe 0%, #4fa3ff 100%);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes chameleon {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes chameleon { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
         @media (max-width: 480px) {
-            .top-bar {
-                top: 15px;
-                right: 15px;
-            }
-
-            .sound-toggle {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
-            }
-
-            .logo-container img {
-                width: 220px;
-            }
-
-            .btns {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .btns a {
-                width: 200px;
-                font-size: 17px;
-                padding: 12px 20px;
-                min-width: auto;
-            }
+            .logo-container img { width: 220px; }
+            .btns { flex-direction: column; gap: 12px; }
+            .btns a { width: 200px; padding: 12px 20px; font-size: 17px; }
         }
-    .top-block-btn {
-    padding: 14px 28px;
-    background: linear-gradient(135deg, #8fd3fe 0%, #4fa3ff 100%);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 15px;
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
-    transition: all 0.4s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.top-block-btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-}
-
-</style>
+    </style>
 </head>
 <body>
-
-
-    <div class="overlay"></div>
 
     <div class="top-bar">
         <div class="sound-toggle" id="soundBtn">🔊</div>
     </div>
 
-    <div class="logo-container" style="margin-top: -10cm; margin-left: 20cm;">
+    <div class="logo-container">
         <img src="assets/logo.gif" alt="1000idea Logo">
     </div>
 
-    <!-- КНОПКИ + Добавлена Telegram -->
-    <div class="btns" style="z-index:5; position:relative;">
+    <div class="btns">
         <a href="block.html" class="telegram">Наш блок</a>
-        
-<a href="https://t.me/idea1001bot" target="_blank" class="telegram">Telegram бот</a>
+        <a href="https://t.me/idea1001bot" target="_blank" class="telegram">Telegram бот</a>
         <a href="https://wa.me/77018004171" target="_blank" class="whatsapp">WhatsApp</a>
         <a href="https://instagram.com/sd_idea" target="_blank" class="instagram">Instagram</a>
         <a href="mailto:1000idea@inbox.ru" target="_blank" class="email">Email</a>
@@ -243,14 +162,12 @@
         });
     </script>
 
-
-
-    <!-- SEO текст для главной страницы -->
+    <!-- SEO текст -->
     <div style="max-width:900px; margin:40px auto; text-align:center; color:white; text-shadow:0 2px 4px rgba(0,0,0,0.4); font-size:18px; line-height:1.6;">
         <h2 style="margin-bottom:15px; font-size:26px;">Печать, баннеры и реклама в Талдыкоргане</h2>
         <p>
-            Наша студия дизайна <b>1000idea</b> занимается профессиональной печатью в Талдыкоргане.<br>
-            Мы создаём <b>баннеры, вывески, наклейки, наружную рекламу</b> и любой дизайн под заказ.<br>
+            Наша студия дизайна <b>1000idea</b> занимается профессиональной печатью в Талдыкоргане.
+            Мы создаём <b>баннеры, вывески, наклейки, наружную рекламу</b> и любой дизайн под заказ.
             Срочная печать — делаем быстро, качественно и по доступной цене.
         </p>
         <p>
@@ -261,4 +178,3 @@
 
 </body>
 </html>
-
