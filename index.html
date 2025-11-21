@@ -25,7 +25,6 @@
             color: white;
         }
 
-        /* Кнопка звука */
         .top-bar {
             position: absolute;
             top: 20px;
@@ -33,7 +32,6 @@
             z-index: 3;
         }
 
-        /* Кнопка звука */
         .sound-toggle {
             width: 45px;
             height: 45px;
@@ -55,7 +53,6 @@
             transform: scale(1.1);
         }
 
-        /* Лого */
         .logo-container {
             position: relative;
             z-index: 2;
@@ -67,7 +64,6 @@
             width: 300px;
         }
 
-        /* Кнопки */
         .btns {
             position: relative;
             margin-top: 35px;
@@ -131,7 +127,11 @@
             background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
         }
 
-        /* Анимации */
+        /* Новая кнопка Telegram */
+        .btns a.telegram {
+            background: linear-gradient(135deg, #8fd3fe 0%, #4fa3ff 100%);
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
@@ -142,14 +142,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Анимация переливания цветов для кнопки звука */
         @keyframes chameleon {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Мобильная адаптация */
         @media (max-width: 480px) {
             .top-bar {
                 top: 15px;
@@ -182,27 +180,24 @@
 </head>
 <body>
 
-    <!-- dark overlay -->
     <div class="overlay"></div>
 
-    <!-- Кнопка звука -->
     <div class="top-bar">
         <div class="sound-toggle" id="soundBtn">🔊</div>
     </div>
 
-    <!-- ЛОГО GIF -->
     <div class="logo-container">
         <img src="assets/logo.gif" alt="1000idea Logo">
     </div>
 
-    <!-- КНОПКИ -->
+    <!-- КНОПКИ + Добавлена Telegram -->
     <div class="btns">
+        <a href="https://t.me/idea1001bot" target="_blank" class="telegram">Telegram бот</a>
         <a href="https://wa.me/77018004171" target="_blank" class="whatsapp">WhatsApp</a>
         <a href="https://instagram.com/sd_idea" target="_blank" class="instagram">Instagram</a>
         <a href="mailto:1000idea@inbox.ru" target="_blank" class="email">Email</a>
     </div>
 
-    <!-- Фоновая музыка -->
     <audio id="bgMusic" loop>
         <source src="audio/music.mp3" type="audio/mpeg">
     </audio>
@@ -227,4 +222,3 @@
 
 </body>
 </html>
-
